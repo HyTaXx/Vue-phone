@@ -4,22 +4,23 @@
     <div>
       <p>{{ this.$store.state.fund }}</p>
       <p>{{ this.$store.state.stock }}</p>
+      <button @click="remove()">Effacer</button>
     </div>
-    <section class="numbers">
-      <div @click="add(9)"><button>9</button></div>
-      <div @click="add(8)"><button>8</button></div>
-      <div @click="add(7)"><button>7</button></div>
-      <div @click="add(6)"><button>6</button></div>
-      <div @click="add(5)"><button>5</button></div>
-      <div @click="add(4)"><button>4</button></div>
-      <div @click="add(3)"><button>3</button></div>
-      <div @click="add(2)"><button>2</button></div>
-      <div @click="add(1)"><button>1</button></div>
-      <div @click="add(0)"><button>0</button></div>
+    <section class="wrapper">
+      <div @click="add(1)"><button class="btn">1</button></div>
+      <div @click="add(2)"><button class="btn">2</button></div>
+      <div @click="add(3)"><button class="btn">3</button></div>
+      <div @click="add(4)"><button class="btn">4</button></div>
+      <div @click="add(5)"><button class="btn">5</button></div>
+      <div @click="add(6)"><button class="btn">6</button></div>
+      <div @click="add(7)"><button class="btn">7</button></div>
+      <div @click="add(8)"><button class="btn">8</button></div>
+      <div @click="add(9)"><button class="btn">9</button></div>
+      <p></p>
+      <div @click="add(0)"><button class="btn">0</button></div>
     </section>
   </div>
   <button @click="call()">Appeler</button>
-  <button @click="remove()">Effacer</button>
 </template>
 <script>
 
@@ -67,11 +68,20 @@ export default {
   } 
 }
 </script>
-<style>
-  .numbers{
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    justify-content: center;
+<style scoped>
+  .wrapper{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 10px;
+    width: 300px;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
 </style>

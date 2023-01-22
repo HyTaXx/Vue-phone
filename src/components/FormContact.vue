@@ -1,15 +1,24 @@
 <template>
-    <div>
-        <form @submit.prevent="ajoutContact">
-            <input type="texte" placeholder="Nom ..." v-model="formContact.name">
-            <input type="texte" placeholder="Numéro ..." v-model="formContact.number">
-            <button type="submit">Ajouter</button>
+    <div class="flex2">
+        <form @submit.prevent="ajoutContact" class="flex">
+            <input type="texte" placeholder="Nom ..." v-model="formContact.name" class="stock">
+            <input type="texte" placeholder="Numéro ..." v-model="formContact.number" class="stock">
+            <button type="submit" class="btn">Ajouter</button>
         </form>
     </div>
 </template>
 <script>
 export default {
     name:"formContact",
+    data() {   
+            return {
+                formContact: {
+                    name: '',
+                    number: '',
+                }
+            }
+
+        },
     computed:{
         contacts(){
             return this.$store.state.contacts
@@ -31,6 +40,26 @@ export default {
     
 }
 </script>
-<style>
-    
+<style scoped>
+    .flex{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 20px;
+    }
+
+    .flex2{
+        display: flex;
+        justify-content: center;
+    }
+
+    .stock{
+        padding: 5px;
+    }
+
+    .btn{
+        width: 50%;
+        margin: auto;
+        padding: 5px;
+    }
 </style>
