@@ -1,6 +1,16 @@
-# phone
+# Project Vue-Phone
+
+The objective of this project is to mimic a phone , a contact page and a history of calls .
+The project uses vue.Js
 
 ## Project setup
+
+### Download project
+
+```
+git clone git@github.com:HyTaXx/Vue-phone.git
+```
+
 ```
 npm install
 ```
